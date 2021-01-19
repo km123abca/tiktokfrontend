@@ -1,0 +1,29 @@
+https://youtu.be/g8yGxDMyGiE?t=5774
+
+creating the backend:
+* Create tiktok-backend folder outside tiktok folder
+* open package.json and inside scripts add
+  "start": "node server.js" (server.js is our entrypoint file, which we chose instead of index.js)
+* Install mongoose and express
+    npm i express mongoose nodemon 
+* add "type":"module" to your package.json (This is to enable es6 style export import)
+// "type": "module"
+
+    //Here is our server.js skeleton
+        const express = require("express");
+        const mongoose = require("mongoose");
+
+        const port = 9000;
+
+        const app = express();
+        app.get("/", (req, res) => res.status(200).send("hello world"));
+        app.listen(port, () => console.log(`listening on localhost:${port}`));
+
+*Setting up database access in MongoDB atlas: https://youtu.be/g8yGxDMyGiE?t=8385
+* Creating Heroku app and deploying
+  https://youtu.be/g8yGxDMyGiE?t=10371, installed heroku cli via the download and install
+
+  *heroku logs --tail
+
+  * Installed axios 
+  npm i axios
